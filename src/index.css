@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.overflowDiv::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.overflowDiv {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+} */
+
+.col {
+  position: relative;
+  overflow: hidden;
+}
+
+.col img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.col:hover img {
+  transform: scale(1.1);
+}
+
+.col::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.col:hover::before {
+  opacity: 1;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-gallery img {
+  margin: 10px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+.video-gallery {
+  /* margin: 2rem 0; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-gallery div {
+  margin: 1px;
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-gallery div:hover {
+  transition: .5s;
+  transform: scale(1.1);
+}
+
+.slick-slide iframe {
+  width: 100%;
+  height: 200px;
+}
+
+.slick-dots li button:before {
+  color: #fff;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .slick-slide iframe {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .slick-slide iframe {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .slick-slide iframe {
+    height: 200px;
+  }
+}
